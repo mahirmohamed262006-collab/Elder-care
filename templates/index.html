@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elder Care Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="app-container">
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">♥</div>
+            <div>
+                <h1>Elder Care</h1>
+                <p>Care Assistant</p>
+            </div>
+        </div>
+        <div class="status"><span class="status-dot"></span> Online</div>
+    </header>
+
+    <main id="chat-box" class="chat-box">
+        <div class="message bot-message">
+            <div class="avatar">♥</div>
+            <div class="message-content">
+                <div class="sender">Elder Care Assistant</div>
+                <div class="bubble">Hello! I'm your Elder Care Assistant.
+I can help with elder-care services, schedules, reminders,
+appointments, and general assistance.
+
+How can I help you today?</div>
+                <div class="time">Now</div>
+            </div>
+        </div>
+    </main>
+
+    <div class="quick-actions">
+        <button onclick="sendQuickMessage('What elder care services are available?')">Care Services</button>
+        <button onclick="sendQuickMessage('Help me create a daily schedule')">Daily Schedule</button>
+        <button onclick="sendQuickMessage('I need medication reminders')">Medication</button>
+        <button onclick="sendQuickMessage('Help me with an appointment')">Appointments</button>
+    </div>
+
+    <div class="input-area">
+        <input type="text" id="message-input" placeholder="Type your message..." autocomplete="off">
+        <button id="send-button" onclick="sendMessage()">Send</button>
+    </div>
+
+    <div class="disclaimer">
+        <strong>Important:</strong> This chatbot provides general elder-care information
+        and assistance. It does not replace a doctor, nurse, caregiver, or emergency medical service.
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
